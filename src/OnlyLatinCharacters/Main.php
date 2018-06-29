@@ -24,7 +24,7 @@ class Main extends PluginBase implements Listener
 
     public function onPlayerChat(PlayerChatEvent $event)
     {
-        if (!preg_match('/[^\p{Common}\p{Latin}]/u', $event->getMessage())) {
+        if (preg_match('/[^\p{Common}\p{Latin}]/u', $event->getMessage())) {
             $event->setCancelled();
         }
     }
